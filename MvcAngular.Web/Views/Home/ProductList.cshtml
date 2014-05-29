@@ -1,0 +1,66 @@
+﻿
+<style>
+
+    tr a {
+        opacity: 0.2;
+    }
+
+    tr:hover a {
+        opacity: 1.0;
+    }
+    
+</style>
+
+<div class="container">
+    
+    <div class="row-fluid">
+        <h4>Product</h4>
+    </div>
+    
+    <div class="row-fluid">
+        <div class="span12">
+            <a class="btn btn-link" ng-click="createProduct()"><i class="icon-plus-sign"></i> Add Product</a>
+        </div>
+    </div>
+    
+    <div class="row-fluid">
+        <table class="table table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th class="span2">CategoryId</th>
+                    <th class="span1">SupplierId</th>
+                    <th class="span3">Name</th>
+                    <th class="span2">Code</th>
+                    <th class="span3">StandardCost</th>
+                    <th class="span1">ListPrice</th> 
+                    <th class="span2">UnitsOnStock</th>
+                    <th class="span1">UnitsOnOrder</th>
+                    <th class="span3">Discontinued</th>
+                    <th class="span2">PhotoFile</th>
+                    <th class="span3">CreatedAt</th>  
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="prod in products">
+                    <td class="input-append">
+                        <a class="btn btn-link" ng-click="viewProduct(prod.id)"><i class="icon-eye-open"></i></a>
+                        <a class="btn btn-link" ng-click="editProduct(prod.id)"><i class="icon-edit"></i></a>
+                        <a class="btn btn-link" ng-click="deleteProduct(prod.id)"><i class="icon-trash"></i></a>
+                    </td> 
+                    <td>{{prod.categoryId}}</td>
+                    <td>{{prod.supplierId}}</td>
+                    <td>{{prod.name}}</td>
+                    <td>{{prod.code}}</td>
+                    <td>{{prod.standardCost}}</td>
+                    <td>{{prod.listPrice}}</td>
+                    <td>{{prod.unitsOnStock}}</td>
+                    <td>{{prod.unitsOnOrder}}</td>
+                    <td>{{prod.discontinued}}</td>
+                    <td>{{prod.photoFile}}</td>
+                    <td>{{prod.createdAt}}</td> 
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
